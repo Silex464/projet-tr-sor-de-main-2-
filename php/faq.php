@@ -9,6 +9,7 @@
  */
 
 session_start();
+require_once 'config.php';
 require_once 'tresorsdemain.php';
 
 $faqCategories = [
@@ -125,8 +126,8 @@ $faqCategories = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ - Questions Fréquentes - Trésor de Main</title>
     <meta name="description" content="Toutes les réponses à vos questions sur Trésor de Main : inscription, vente de créations, achat d'art artisanal, paiement, livraison.">
-    <link rel="stylesheet" href="/CSS/HeaderFooter.css">
-    <link rel="stylesheet" href="/CSS/projet.css">
+    <link rel="stylesheet" href="<?= CSS_PATH ?>/HeaderFooter.css">
+    <link rel="stylesheet" href="<?= CSS_PATH ?>/projet.css">
     <style>
         :root {
             --primary: #8D5524;

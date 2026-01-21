@@ -9,6 +9,7 @@
  */
 
 session_start();
+require_once 'config.php';
 require_once 'tresorsdemain.php';
 
 // Récupérer quelques statistiques
@@ -32,8 +33,8 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À Propos - Notre Histoire - Trésor de Main</title>
     <meta name="description" content="Découvrez l'histoire de Trésor de Main, la plateforme qui célèbre l'artisanat français. Notre mission : connecter artisans passionnés et amateurs d'art unique.">
-    <link rel="stylesheet" href="/CSS/HeaderFooter.css">
-    <link rel="stylesheet" href="/CSS/projet.css">
+    <link rel="stylesheet" href="<?= CSS_PATH ?>/HeaderFooter.css">
+    <link rel="stylesheet" href="<?= CSS_PATH ?>/projet.css">
     <style>
         :root {
             --primary: #8D5524;
@@ -49,7 +50,7 @@ try {
         /* Hero Section */
         .about-hero {
             background: linear-gradient(rgba(62,39,35,0.85), rgba(141,85,36,0.9)),
-                        url('/assets/images/Tour-de-potier.jpg') center/cover;
+                        url('<?= IMAGES_PATH ?>/Tour-de-potier.jpg') center/cover;
             color: white; text-align: center; padding: 100px 20px;
         }
         .about-hero h1 { color: white; font-size: 3rem; margin-bottom: 20px; }
@@ -182,7 +183,7 @@ try {
                         <p>Notre plateforme célèbre la diversité des métiers d'art : céramistes, bijoutiers, ébénistes, peintres, sculpteurs... Chacun trouve ici un espace pour raconter son histoire et présenter ses créations.</p>
                     </div>
                     <div class="mission-image">
-                        <img src="/assets/images/Tour-de-potier.jpg" alt="Artisan au travail">
+                        <img src="<?= IMAGES_PATH ?>/Tour-de-potier.jpg" alt="Artisan au travail">
                     </div>
                 </div>
             </section>
@@ -247,7 +248,7 @@ try {
                 <p class="team-intro">Derrière Trésor de Main, une équipe passionnée qui croit en la force de l'artisanat pour transformer notre quotidien.</p>
                 <div class="team-grid">
                     <div class="team-member">
-                        <img src="/assets/images/Théobald_Cuivreforge.jpg" alt="Membre équipe">
+                        <img src="<?= IMAGES_PATH ?>/Théobald_Cuivreforge.jpg" alt="Membre équipe">
                         <div class="team-member-info">
                             <h4>Théobald Cuivreforge</h4>
                             <p>Fondateur</p>
@@ -255,7 +256,7 @@ try {
                         </div>
                     </div>
                     <div class="team-member">
-                        <img src="/assets/images/Adele_Finepinceau.jpg" alt="Membre équipe">
+                        <img src="<?= IMAGES_PATH ?>/Adele_Finepinceau.jpg" alt="Membre équipe">
                         <div class="team-member-info">
                             <h4>Adèle Finepinceau</h4>
                             <p>Direction Artistique</p>
@@ -263,7 +264,7 @@ try {
                         </div>
                     </div>
                     <div class="team-member">
-                        <img src="/assets/images/default-avatar.svg" alt="Membre équipe">
+                        <img src="<?= IMAGES_PATH ?>/default-avatar.svg" alt="Membre équipe">
                         <div class="team-member-info">
                             <h4>Lucas Martin</h4>
                             <p>Développeur</p>

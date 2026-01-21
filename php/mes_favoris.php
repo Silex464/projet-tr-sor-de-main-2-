@@ -11,6 +11,7 @@
  */
 
 session_start();
+require_once 'config.php';
 require_once 'tresorsdemain.php';
 require_once 'auth.php';
 
@@ -76,8 +77,8 @@ $csrfToken = generateCSRFToken();
     <title>Mes Favoris - Trésor de Main</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/HeaderFooter.css">
-    <link rel="stylesheet" href="/CSS/projet.css">
+    <link rel="stylesheet" href="<?= CSS_PATH ?>/HeaderFooter.css">
+    <link rel="stylesheet" href="<?= CSS_PATH ?>/projet.css">
     <style>
         :root {
             --primary: #8D5524;

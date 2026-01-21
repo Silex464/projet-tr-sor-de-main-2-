@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once 'config.php';
 require_once 'auth.php';
 require_once 'tresorsdemain.php';
 
@@ -83,8 +84,8 @@ $users = $stmt->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des Utilisateurs - Admin</title>
-    <link rel="stylesheet" href="/CSS/HeaderFooter.css">
-    <link rel="stylesheet" href="/CSS/projet.css">
+    <link rel="stylesheet" href="<?= CSS_PATH ?>/HeaderFooter.css">
+    <link rel="stylesheet" href="<?= CSS_PATH ?>/projet.css">
     <style>
         * { box-sizing: border-box; }
         .admin-wrapper { display: flex; min-height: 100vh; }
@@ -186,7 +187,7 @@ $users = $stmt->fetchAll();
                     </thead>
                     <tbody>
                         <?php foreach ($users as $user): 
-                            $userPhoto = !empty($user['photo_profil']) ? '/' . $user['photo_profil'] : '/assets/images/default-avatar.svg';
+                            $userPhoto = !empty($user['photo_profil']) ? BASE_PATH . '/' . $user['photo_profil'] : IMAGES_PATH . '/default-avatar.svg';
                         ?>
                             <tr>
                                 <td><?php echo $user['id']; ?></td>

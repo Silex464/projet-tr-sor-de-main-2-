@@ -12,7 +12,7 @@ body {
     margin: 0;
     background-color: #fdfbf7;
     background-image:
-        url('/assets/images/paperboard-texture.jpg');
+        url('/Projet-Tr-sor-de-Main/assets/images/paperboard-texture.jpg');
     background-repeat: repeat;
     background-size: 500px auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -23,28 +23,28 @@ body {
 
 @font-face {
     font-family: 'Streetwear';
-    src: url('/assets/fonts/Streetwear.otf') format('opentype');
+    src: url('/Projet-Tr-sor-de-Main/assets/fonts/Streetwear.otf') format('opentype');
     font-weight: normal;
     font-size: normal;
 }
 
 @font-face {
     font-family: 'Bobogie';
-    src: url('/assets/fonts/Bobogie\ Groovy.otf') format('opentype');
+    src: url('/Projet-Tr-sor-de-Main/assets/fonts/Bobogie\ Groovy.otf') format('opentype');
     font-weight: normal;
     font-size: normal;
 }
 
 @font-face {
     font-family: 'Anonymous';
-    src: url('/assets/fonts/Anonymous Punk.ttf') format('opentype');
+    src: url('/Projet-Tr-sor-de-Main/assets/fonts/Anonymous Punk.ttf') format('opentype');
     font-weight: normal;
     font-size: normal;
 }
 
 @font-face {
     font-family: 'Earwig Factory';
-    src: url('/assets/fonts/earwig factory rg.otf') format('opentype');
+    src: url('/Projet-Tr-sor-de-Main/assets/fonts/earwig factory rg.otf') format('opentype');
     font-weight: normal;
     font-size: normal;
 }

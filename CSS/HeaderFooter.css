@@ -8,7 +8,7 @@ header {
     background-color: rgba(141, 85, 36, 0.95);
     background-image: 
         linear-gradient(rgba(141, 85, 36, 0.95), rgba(141, 85, 36, 0.95)),
-        url("/assets/images/brown-paper.jpg");
+        url("/Projet-Tr-sor-de-Main/assets/images/brown-paper.jpg");
     border-bottom: 3px solid rgba(62, 39, 35, 0.2);
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     backdrop-filter: blur(10px);
@@ -146,7 +146,7 @@ header h1 {
 
 footer {
     background: linear-gradient(rgba(141, 85, 36, 0.9), rgba(141, 85, 36, 0.8)),
-                url("/assets/images/brown-paper.jpg");
+                url("/Projet-Tr-sor-de-Main/assets/images/brown-paper.jpg");
     color: #FFF8E1;
     padding: 60px 0 20px;
     margin-top: auto;

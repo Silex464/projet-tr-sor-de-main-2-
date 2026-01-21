@@ -6,6 +6,7 @@
  */
 
 session_start();
+require_once 'config.php';
 require_once 'tresorsdemain.php';
 ?>
 <!DOCTYPE html>
@@ -15,8 +16,8 @@ require_once 'tresorsdemain.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mentions Légales - Trésor de Main</title>
     <meta name="description" content="Mentions légales du site Trésor de Main - Informations sur l'éditeur, l'hébergeur et les données personnelles.">
-    <link rel="stylesheet" href="/CSS/HeaderFooter.css">
-    <link rel="stylesheet" href="/CSS/projet.css">
+    <link rel="stylesheet" href="<?= CSS_PATH ?>/HeaderFooter.css">
+    <link rel="stylesheet" href="<?= CSS_PATH ?>/projet.css">
     <style>
         :root {
             --primary: #8D5524;

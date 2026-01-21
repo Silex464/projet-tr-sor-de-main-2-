@@ -1,4 +1,5 @@
 <?php session_start();
+require_once 'config.php';
 
 if (!isset($_GET['id']) || empty($_GET['id'])) {
     header("Location: evenements.php");
@@ -34,8 +35,8 @@ if ($result->num_rows > 0) {
 <head>
     <meta charset="UTF-8">
     <title><?php echo htmlspecialchars($event['lieu']); ?> - Trésor de Main</title>
-    <link rel="stylesheet" href="/CSS/projet.css">
-    <link rel="stylesheet" href="/CSS/HeaderFooter.css">
+    <link rel="stylesheet" href="<?= CSS_PATH ?>/projet.css">
+    <link rel="stylesheet" href="<?= CSS_PATH ?>/HeaderFooter.css">
     <style>
         .page-detail {
             max-width: 800px;
@@ -78,7 +79,7 @@ if ($result->num_rows > 0) {
     <main class="page-detail">
         
         <?php if (!empty($event['image'])): ?>
-            <img src="/assets/images/<?php echo htmlspecialchars($event['image']); ?>" class="detail-img" alt="Event">
+            <img src="<?= IMAGES_PATH ?>/<?php echo htmlspecialchars($event['image']); ?>" class="detail-img" alt="Event">
         <?php endif; ?>
 
         <h1><?php echo htmlspecialchars($event['titre']); ?></h1>

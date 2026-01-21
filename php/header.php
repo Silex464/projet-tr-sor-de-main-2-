@@ -4,6 +4,9 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+// Charger la configuration
+require_once __DIR__ . '/config.php';
+
 // Récupérer le nom du fichier actuel
 $current_page = basename($_SERVER['PHP_SELF']);
 
@@ -13,8 +16,8 @@ $userName = $isLoggedIn ? htmlspecialchars(($_SESSION['user_prenom'] ?? '') . ' 
 $userType = $_SESSION['user_type'] ?? null;
 $isArtisan = $userType === 'artisan';
 $userPhoto = $_SESSION['user_photo'] ?? '';
-$defaultAvatar = '/assets/images/default-avatar.svg';
-$avatarSrc = !empty($userPhoto) ? '/' . $userPhoto : $defaultAvatar;
+$defaultAvatar = IMAGES_PATH . '/default-avatar.svg';
+$avatarSrc = !empty($userPhoto) ? BASE_PATH . '/' . $userPhoto : $defaultAvatar;
 ?>
 <!DOCTYPE html>
 <html lang="fr-FR">
@@ -22,7 +25,7 @@ $avatarSrc = !empty($userPhoto) ? '/' . $userPhoto : $defaultAvatar;
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Le site web de tous les artisans">
-    <link rel="stylesheet" href="/CSS/HeaderFooter.css">
+    <link rel="stylesheet" href="<?= CSS_PATH ?>/HeaderFooter.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
@@ -44,7 +47,7 @@ $avatarSrc = !empty($userPhoto) ? '/' . $userPhoto : $defaultAvatar;
 <body>
     <!-- Menu Desktop - Toujours visible sur grand écran -->
 <header>
-    <img src="/assets/images/Logo Site détouré.png" alt="Logo Trésor de Main" width="60">
+    <img src="<?= IMAGES_PATH ?>/Logo Site détouré.png" alt="Logo Trésor de Main" width="60">
     <h1>Trésor de Main</h1>
     <nav class="menu-desktop">
         <a href="Page_Acceuil.php" <?php echo ($current_page == 'Page_Acceuil.php') ? 'class="active"' : ''; ?>>Accueil</a>

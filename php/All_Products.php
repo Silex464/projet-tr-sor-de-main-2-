@@ -12,6 +12,7 @@
  */
 
 // Include centralized auth system (handles session)
+require_once 'config.php';
 require_once 'auth.php';
 
 // User state using auth functions
@@ -110,11 +111,12 @@ try {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Découvrez toutes les créations artisanales sur Trésor de Main">
-    <link rel="stylesheet" href="/CSS/HeaderFooter.css">
-    <link rel="stylesheet" href="/CSS/projet.css">
+    <link rel="stylesheet" href="<?= CSS_PATH ?>/HeaderFooter.css">
+    <link rel="stylesheet" href="<?= CSS_PATH ?>/projet.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="icon" href="../favicon.ico">
     <style>
         .page-container { min-height: 100vh; display: flex; flex-direction: column; }
         .main-content { display: flex; flex: 1; flex-direction: column; }

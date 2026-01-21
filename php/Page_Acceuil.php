@@ -3,6 +3,7 @@
  * Page d'Accueil - Trésor de Main
  * Affiche les best-sellers et les artisans dynamiquement depuis la BDD
  */
+require_once 'config.php';
 require_once 'tresorsdemain.php';
 
 // Récupérer les produits best-sellers et les artisans depuis la BDD
@@ -41,17 +42,16 @@ try {
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="Le site web de tous les artisans">
-		<link rel="stylesheet" href="/CSS/HeaderFooter.css">
-		<link rel="stylesheet" href="/CSS/projet.css">
-		<link rel="stylesheet" href="/CSS/gallerieRotative.css">
-		<link rel="stylesheet" href="/CSS/horizontalScroll.css">
-		<link rel="stylesheet" href="/CSS/image.css">
+		<link rel="stylesheet" href="<?= CSS_PATH ?>/HeaderFooter.css">
+		<link rel="stylesheet" href="<?= CSS_PATH ?>/projet.css">
+		<link rel="stylesheet" href="<?= CSS_PATH ?>/gallerieRotative.css">
+		<link rel="stylesheet" href="<?= CSS_PATH ?>/horizontalScroll.css">
+		<link rel="stylesheet" href="<?= CSS_PATH ?>/image.css">
 		<a name="haut"></a>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
 		<style>
-			/* Style pour les liens dans les galeries */
 			.Gal_card-link, .artisan-card-link {
 				text-decoration: none;
 				color: inherit;
@@ -72,8 +72,7 @@ try {
 	</head>
 	<body>
 		<section>
-			<!-- Header -->
-			<?php include '../php/header.php'; ?>
+			<?php include 'header.php'; ?>
 
 			<h2>Bienvenue sur Trésor de Main !</h2>
 			<div class="conteneur-presentation">
@@ -82,7 +81,7 @@ try {
 					<a href="All_Products.php" class="bouton">Explorer</a>
 					<a href="inscription.php" class="bouton">Créer un compte</a>
 				</div>
-            	<img src="/assets/images/Tour-de-potier.jpg" alt="Poterie" width="30%">
+            	<img src="<?= IMAGES_PATH ?>/Tour-de-potier.jpg" alt="Poterie" width="30%">
 			</div>
 		</section>
 		<article>
@@ -98,7 +97,7 @@ try {
             <?php foreach ($bestSellers as $index => $product): ?>
                 <?php 
                     $i = $index + 1;
-                    $imageSrc = !empty($product['image']) ? '/' . $product['image'] : '/assets/images/Tour-de-potier.jpg';
+                    $imageSrc = !empty($product['image']) ? BASE_PATH . '/' . $product['image'] : IMAGES_PATH . '/Tour-de-potier.jpg';
                     $productName = htmlspecialchars($product['nom_article']);
                     $productPrice = number_format($product['prix'], 0, ',', ' ') . ' €';
                     $productDesc = htmlspecialchars(substr($product['description'] ?? '', 0, 100));
@@ -117,13 +116,12 @@ try {
                 </span>
             <?php endforeach; ?>
             <?php 
-            // Compléter avec des doublons si moins de 8 produits
             $count = count($bestSellers);
             if ($count < 8 && $count > 0):
                 for ($j = $count; $j < 8; $j++):
                     $product = $bestSellers[$j % $count];
                     $i = $j + 1;
-                    $imageSrc = !empty($product['image']) ? '/' . $product['image'] : '/assets/images/Tour-de-potier.jpg';
+                    $imageSrc = !empty($product['image']) ? BASE_PATH . '/' . $product['image'] : IMAGES_PATH . '/Tour-de-potier.jpg';
                     $productName = htmlspecialchars($product['nom_article']);
                     $productPrice = number_format($product['prix'], 0, ',', ' ') . ' €';
                     $productDesc = htmlspecialchars(substr($product['description'] ?? '', 0, 100));
@@ -142,14 +140,13 @@ try {
                 </span>
             <?php endfor; endif; ?>
         <?php else: ?>
-            <!-- Fallback si pas de produits en BDD -->
             <span style="--i:1">
 				<a href="All_Products.php" class="Gal_card-link">
 				<div class="Gal_card">
-					<img src="/assets/images/Assiette-Chats.jpg" alt="Assiette-Chats">
+					<img src="<?= IMAGES_PATH ?>/Assiette-Chats.jpg" alt="Assiette-Chats">
 					<div class="info">
 						<p>Assiette-Chats - 40 €</p>
-						<p>Assiette en céramique illustrée de chats bleus inspiré de la porcelaine japonaise traditionnelle</p>
+						<p>Assiette en céramique illustrée de chats bleus</p>
 					</div>
 				</div>
 				</a>
@@ -157,10 +154,10 @@ try {
             <span style="--i:2">
 				<a href="All_Products.php" class="Gal_card-link">
 				<div class="Gal_card">
-					<img src="/assets/images/Tasse-visage.jpg" alt="Tasse-visage">
+					<img src="<?= IMAGES_PATH ?>/Tasse-visage.jpg" alt="Tasse-visage">
 					<div class="info">
 						<p>Tasse-visage - 10 €</p>
-						<p>Une tasse sculpturale, mêlant art céramique et design expressif pour éveiller la curiosité.</p>
+						<p>Une tasse sculpturale originale</p>
 					</div>
 				</div>
 				</a>
@@ -168,10 +165,10 @@ try {
             <span style="--i:3">
 				<a href="All_Products.php" class="Gal_card-link">
 				<div class="Gal_card">
-					<img src="/assets/images/bol breton zakia.png" alt="Bol breton personnalisé">
+					<img src="<?= IMAGES_PATH ?>/bol breton zakia.png" alt="Bol breton">
 					<div class="info">
-						<p>Bol breton personnalisé - 15 000 €</p>
-						<p>Un bol traditionnel breton personnalisé à votre guise</p>
+						<p>Bol breton - 15 000 €</p>
+						<p>Un bol traditionnel breton personnalisé</p>
 					</div>
 				</div>
 				</a>
@@ -179,10 +176,10 @@ try {
             <span style="--i:4">
 				<a href="All_Products.php" class="Gal_card-link">
 				<div class="Gal_card">
-					<img src="/assets/images/Tasse-Noireaudes.jpg" alt="Tasse-Noireaudes">
+					<img src="<?= IMAGES_PATH ?>/Tasse-Noireaudes.jpg" alt="Tasse-Noireaudes">
 					<div class="info">
 						<p>Tasse-Noireaudes - 1 000 €</p>
-						<p>Une tasse féerique aux accents animés, où des créatures étoilées éveillent l'imaginaire avec douceur et fantaisie.</p>
+						<p>Une tasse féerique aux accents animés</p>
 					</div>
 				</div>
 				</a>
@@ -190,10 +187,10 @@ try {
             <span style="--i:5">
 				<a href="All_Products.php" class="Gal_card-link">
 				<div class="Gal_card">
-					<img src="/assets/images/Assiette-Chats.jpg" alt="Assiette-Chats">
+					<img src="<?= IMAGES_PATH ?>/Assiette-Chats.jpg" alt="Assiette-Chats">
 					<div class="info">
 						<p>Assiette-Chats - 40 €</p>
-						<p>Assiette en céramique illustrée de chats bleus inspiré de la porcelaine japonaise traditionnelle</p>
+						<p>Assiette en céramique illustrée de chats bleus</p>
 					</div>
 				</div>
 				</a>
@@ -201,10 +198,10 @@ try {
             <span style="--i:6">
 				<a href="All_Products.php" class="Gal_card-link">
 				<div class="Gal_card">
-					<img src="/assets/images/Tasse-visage.jpg" alt="Tasse-visage">
+					<img src="<?= IMAGES_PATH ?>/Tasse-visage.jpg" alt="Tasse-visage">
 					<div class="info">
 						<p>Tasse-visage - 10 €</p>
-						<p>Une tasse sculpturale, mêlant art céramique et design expressif pour éveiller la curiosité.</p>
+						<p>Une tasse sculpturale originale</p>
 					</div>
 				</div>
 				</a>
@@ -212,10 +209,10 @@ try {
             <span style="--i:7">
 				<a href="All_Products.php" class="Gal_card-link">
 				<div class="Gal_card">
-					<img src="/assets/images/bol breton zakia.png" alt="Bol breton personnalisé">
+					<img src="<?= IMAGES_PATH ?>/bol breton zakia.png" alt="Bol breton">
 					<div class="info">
-						<p>Bol breton personnalisé - 15 000 €</p>
-						<p>Un bol traditionnel breton personnalisé à votre guise</p>
+						<p>Bol breton - 15 000 €</p>
+						<p>Un bol traditionnel breton personnalisé</p>
 					</div>
 				</div>
 				</a>
@@ -223,10 +220,10 @@ try {
             <span style="--i:8">
 				<a href="All_Products.php" class="Gal_card-link">
 				<div class="Gal_card">
-					<img src="/assets/images/Tasse-Noireaudes.jpg" alt="Tasse-Noireaudes">
+					<img src="<?= IMAGES_PATH ?>/Tasse-Noireaudes.jpg" alt="Tasse-Noireaudes">
 					<div class="info">
 						<p>Tasse-Noireaudes - 1 000 €</p>
-						<p>Une tasse féerique aux accents animés, où des créatures étoilées éveillent l'imaginaire avec douceur et fantaisie.</p>
+						<p>Une tasse féerique aux accents animés</p>
 					</div>
 				</div>
 				</a>
@@ -238,7 +235,7 @@ try {
         <button class="btn" id="prev">&#8592;</button>
         <button class="btn" id="next">&#8594;</button>
     </div>
-    <script src="/JavaScript/gallerieRotative.js"></script>
+    <script src="<?= JS_PATH ?>/gallerieRotative.js"></script>
 	</div>
 	<div class="best-seller-cta">
 		<a href="All_Products.php" class="bouton">Voir tout</a>
@@ -252,20 +249,16 @@ try {
                     <a href="All_Products.php" class="bouton">Découvrir</a>
                 </div>
             </section>
-			<a name="#A_Propos"></a>
 			<section>
                 <div class="boite-contenu">
                     <h3>A Propos de nous</h3>
-                    <p><strong>Trésor de Main</strong> est né d'une conviction simple : derrière chaque objet façonné à la main se cache une histoire, une patience et une âme. Nous ne sommes pas simplement une place de marché, mais une galerie vivante dédiée à la promotion des créateurs, des artistes et des artisans d'exception.</p>
+                    <p><strong>Trésor de Main</strong> est né d'une conviction simple : derrière chaque objet façonné à la main se cache une histoire, une patience et une âme.</p>
                     <br>
-                    <p>Notre plateforme a pour vocation de redonner ses lettres de noblesse au "Fait-Main". En connectant directement les amateurs d'art aux créateurs, nous valorisons un savoir-faire authentique, loin de la production de masse. Chaque pièce disponible ici est unique, fruit d'heures de travail et de passion.</p>
-                    <br>
-                    <p>Que vous soyez à la recherche d'une sculpture émouvante, d'une peinture vibrante ou d'un bijou singulier, vous participez à une économie plus humaine et créative. Soutenez le talent, offrez de l'unique.</p>
+                    <p>Notre plateforme a pour vocation de redonner ses lettres de noblesse au "Fait-Main". En connectant directement les amateurs d'art aux créateurs, nous valorisons un savoir-faire authentique.</p>
                     <a href="a-propos.php" class="bouton">En savoir plus</a>
                 </div>
             </section>
 
-            <!-- Section Confiance -->
             <section>
                 <h3 style="text-align: center;">Pourquoi nous faire confiance ?</h3>
                 <div class="trust-indicators">
@@ -294,12 +287,11 @@ try {
 		<div class="scroll-container">
 			<?php if (!empty($artisans)): ?>
 				<?php 
-				// Dupliquer les artisans pour avoir un défilement continu
 				$allArtisans = array_merge($artisans, $artisans);
 				foreach ($allArtisans as $artisan): 
-					$artisanPhoto = !empty($artisan['photo_profil']) ? '/' . $artisan['photo_profil'] : '/assets/images/default-avatar.svg';
+					$artisanPhoto = !empty($artisan['photo_profil']) ? BASE_PATH . '/' . $artisan['photo_profil'] : IMAGES_PATH . '/default-avatar.svg';
 					$artisanName = htmlspecialchars($artisan['prenom'] . ' ' . $artisan['nom']);
-					$artisanDesc = !empty($artisan['specialite']) ? htmlspecialchars($artisan['specialite']) : (!empty($artisan['description']) ? htmlspecialchars(substr($artisan['description'], 0, 80)) : 'Artisan passionné');
+					$artisanDesc = !empty($artisan['specialite']) ? htmlspecialchars($artisan['specialite']) : 'Artisan passionné';
 					$artisanId = $artisan['id'];
 				?>
 				<a href="artisan.php?id=<?= $artisanId ?>" class="artisan-card-link">
@@ -313,95 +305,93 @@ try {
 				</a>
 				<?php endforeach; ?>
 			<?php else: ?>
-				<!-- Fallback si pas d'artisans en BDD -->
 				<a href="All_Products.php" class="artisan-card-link">
 					<div class="scroll-objet card">
-						<img src="/assets/images/Théobald_Cuivreforge.jpg" alt="Théobald Cuivreforge"/>
+						<img src="<?= IMAGES_PATH ?>/Théobald_Cuivreforge.jpg" alt="Théobald Cuivreforge"/>
 						<div class="info">
 							<p>Théobald Cuivreforge</p>
-							<p>Artisan menuisier passionné et experimenté</p>
+							<p>Artisan menuisier passionné</p>
 						</div>
 					</div>
 				</a>
 				<a href="All_Products.php" class="artisan-card-link">
 					<div class="scroll-objet card">
-						<img src="/assets/images/Adele_Finepinceau.jpg" alt="Adele Finepinceau"/>
+						<img src="<?= IMAGES_PATH ?>/Adele_Finepinceau.jpg" alt="Adele Finepinceau"/>
 						<div class="info">
 							<p>Adele Finepinceau</p>
-							<p>Peintre virtuose qui manie ses pinceaux avec une précision inégalée</p>
+							<p>Peintre virtuose</p>
 						</div>
 					</div>
 				</a>
 				<a href="All_Products.php" class="artisan-card-link">
 					<div class="scroll-objet card">
-						<img src="/assets/images/Théobald_Cuivreforge.jpg" alt="Théobald Cuivreforge"/>
+						<img src="<?= IMAGES_PATH ?>/Théobald_Cuivreforge.jpg" alt="Théobald Cuivreforge"/>
 						<div class="info">
 							<p>Théobald Cuivreforge</p>
-							<p>Artisan menuisier passionné et experimenté</p>
+							<p>Artisan menuisier passionné</p>
 						</div>
 					</div>
 				</a>
 				<a href="All_Products.php" class="artisan-card-link">
 					<div class="scroll-objet card">
-						<img src="/assets/images/Adele_Finepinceau.jpg" alt="Adele Finepinceau"/>
+						<img src="<?= IMAGES_PATH ?>/Adele_Finepinceau.jpg" alt="Adele Finepinceau"/>
 						<div class="info">
 							<p>Adele Finepinceau</p>
-							<p>Peintre virtuose qui manie ses pinceaux avec une précision inégalée</p>
+							<p>Peintre virtuose</p>
 						</div>
 					</div>
 				</a>
 				<a href="All_Products.php" class="artisan-card-link">
 					<div class="scroll-objet card">
-						<img src="/assets/images/Théobald_Cuivreforge.jpg" alt="Théobald Cuivreforge"/>
+						<img src="<?= IMAGES_PATH ?>/Théobald_Cuivreforge.jpg" alt="Théobald Cuivreforge"/>
 						<div class="info">
 							<p>Théobald Cuivreforge</p>
-							<p>Artisan menuisier passionné et experimenté</p>
+							<p>Artisan menuisier passionné</p>
 						</div>
 					</div>
 				</a>
-				<!-- Dupliquer pour le défilement continu -->
 				<a href="All_Products.php" class="artisan-card-link">
 					<div class="scroll-objet card">
-						<img src="/assets/images/Adele_Finepinceau.jpg" alt="Adele Finepinceau"/>
+						<img src="<?= IMAGES_PATH ?>/Adele_Finepinceau.jpg" alt="Adele Finepinceau"/>
 						<div class="info">
 							<p>Adele Finepinceau</p>
-							<p>Peintre virtuose qui manie ses pinceaux avec une précision inégalée</p>
+							<p>Peintre virtuose</p>
 						</div>
 					</div>
 				</a>
 				<a href="All_Products.php" class="artisan-card-link">
 					<div class="scroll-objet card">
-						<img src="/assets/images/Théobald_Cuivreforge.jpg" alt="Théobald Cuivreforge"/>
+						<img src="<?= IMAGES_PATH ?>/Théobald_Cuivreforge.jpg" alt="Théobald Cuivreforge"/>
 						<div class="info">
 							<p>Théobald Cuivreforge</p>
-							<p>Artisan menuisier passionné et experimenté</p>
+							<p>Artisan menuisier passionné</p>
 						</div>
 					</div>
 				</a>
 				<a href="All_Products.php" class="artisan-card-link">
 					<div class="scroll-objet card">
-						<img src="/assets/images/Adele_Finepinceau.jpg" alt="Adele Finepinceau"/>
+						<img src="<?= IMAGES_PATH ?>/Adele_Finepinceau.jpg" alt="Adele Finepinceau"/>
 						<div class="info">
 							<p>Adele Finepinceau</p>
-							<p>Peintre virtuose qui manie ses pinceaux avec une précision inégalée</p>
+							<p>Peintre virtuose</p>
 						</div>
 					</div>
 				</a>
 				<a href="All_Products.php" class="artisan-card-link">
 					<div class="scroll-objet card">
-						<img src="/assets/images/Théobald_Cuivreforge.jpg" alt="Théobald Cuivreforge"/>
+						<img src="<?= IMAGES_PATH ?>/Théobald_Cuivreforge.jpg" alt="Théobald Cuivreforge"/>
 						<div class="info">
 							<p>Théobald Cuivreforge</p>
-							<p>Artisan menuisier passionné et experimenté</p>
+							<p>Artisan menuisier passionné</p>
 						</div>
 					</div>
 				</a>
 				<a href="All_Products.php" class="artisan-card-link">
 					<div class="scroll-objet card">
-						<img src="/assets/images/Adele_Finepinceau.jpg" alt="Adele Finepinceau"/>
+						<img src="<?= IMAGES_PATH ?>/Adele_Finepinceau.jpg" alt="Adele Finepinceau"/>
 						<div class="info">
 							<p>Adele Finepinceau</p>
-							<p>Peintre virtuose qui manie ses pinceaux avec une précision inégalée</p>
+							<p>Peintre virtuose</p>
 						</div>
 					</div>
 				</a>
@@ -410,9 +400,8 @@ try {
 			</section>
 		</article>
 		
- <!-- Pied de page -->
     <?php include '../HTML/footer.html'; ?>
 	
-<script src="../JavaScript/script.js"></script>
+<script src="<?= JS_PATH ?>/script.js"></script>
 </body>
 </html>

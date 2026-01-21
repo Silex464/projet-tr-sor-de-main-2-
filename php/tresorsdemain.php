@@ -8,11 +8,25 @@
  * Les fonctions d'authentification sont dans auth.php
  */
 
-// Configuration de la base de données
-define('DB_HOST', '178.33.122.21');
-define('DB_NAME', 'hangardb_yafa64220');
-define('DB_USER', 'hangardb_yafa64220');
-define('DB_PASS', 'XQisTXtNI4niZbhXTFDqEqIN');
+// Détection automatique de l'environnement
+$isLocalhost = in_array($_SERVER['HTTP_HOST'] ?? '', ['localhost', '127.0.0.1']) 
+               || strpos($_SERVER['HTTP_HOST'] ?? '', 'localhost') !== false;
+
+// Configuration de la base de données selon l'environnement
+if ($isLocalhost) {
+    // Environnement local (XAMPP, WAMP, etc.)
+    define('DB_HOST', 'localhost');
+    define('DB_NAME', 'tresordemain');
+    define('DB_USER', 'root');
+    define('DB_PASS', '');
+} else {
+    // Environnement de production (garageisep)
+    // IMPORTANT: Modifiez ces valeurs avec vos identifiants garageisep
+    define('DB_HOST', 'localhost');
+    define('DB_NAME', 'hangardb_yafa64220');
+    define('DB_USER', 'yafa64220');
+    define('DB_PASS', 'VOTRE_MOT_DE_PASSE_ICI'); // À remplacer !
+}
 
 /**
  * Fonction de connexion sécurisée à la base de données

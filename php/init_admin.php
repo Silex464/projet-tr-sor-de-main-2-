@@ -3,7 +3,7 @@
  * Script d'initialisation du compte administrateur
  * 
  * INSTRUCTIONS :
- * 1. Accédez à ce fichier via votre navigateur : http://localhost/php/init_admin.php
+ * 1. Accédez à ce fichier via votre navigateur : http://localhost/Projet-Tr-sor-de-Main/php/init_admin.php
  * 2. Une fois le compte créé, SUPPRIMEZ ce fichier pour des raisons de sécurité
  */
 
@@ -73,6 +73,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Initialisation Admin - Trésor de Main</title>
+    <link rel="icon" href="../favicon.ico">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

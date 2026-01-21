@@ -11,6 +11,7 @@
  */
 
 session_start();
+require_once 'config.php';
 require_once 'tresorsdemain.php';
 require_once 'auth.php';
 
@@ -87,7 +88,7 @@ try {
 }
 
 $artisanPhoto = !empty($artisan['photo_profil']) ? '../' . $artisan['photo_profil'] : '../assets/images/default-avatar.svg';
-$coverPhoto = !empty($artisan['photo_couverture']) ? '../' . $artisan['photo_couverture'] : '/assets/images/Tour-de-potier.jpg';
+$coverPhoto = !empty($artisan['photo_couverture']) ? '../' . $artisan['photo_couverture'] : IMAGES_PATH . '/Tour-de-potier.jpg';
 $memberSince = date('F Y', strtotime($artisan['date_inscription']));
 ?>
 <!DOCTYPE html>
@@ -97,8 +98,8 @@ $memberSince = date('F Y', strtotime($artisan['date_inscription']));
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($artisan['prenom'] . ' ' . $artisan['nom']) ?> - Artisan sur Trésor de Main</title>
     <meta name="description" content="Découvrez les créations de <?= htmlspecialchars($artisan['prenom'] . ' ' . $artisan['nom']) ?>, artisan <?= htmlspecialchars($artisan['specialite'] ?? '') ?> sur Trésor de Main.">
-    <link rel="stylesheet" href="/CSS/HeaderFooter.css">
-    <link rel="stylesheet" href="/CSS/projet.css">
+    <link rel="stylesheet" href="<?= CSS_PATH ?>/HeaderFooter.css">
+    <link rel="stylesheet" href="<?= CSS_PATH ?>/projet.css">
     <style>
         :root {
             --primary: #8D5524;

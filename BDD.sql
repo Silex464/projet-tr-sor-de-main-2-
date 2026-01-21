@@ -18,29 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `hangardb_yafa64220`
+-- Base de données : `tresordemain`
 --
--- Note: Ne pas créer la base, elle existe déjà sur Hangar
--- CREATE DATABASE IF NOT EXISTS `hangardb_yafa64220` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
--- USE `hangardb_yafa64220`;
-
--- --------------------------------------------------------
--- Suppression des tables existantes (dans l'ordre inverse des dépendances)
--- --------------------------------------------------------
-SET FOREIGN_KEY_CHECKS = 0;
-DROP TABLE IF EXISTS `participation_evenement`;
-DROP TABLE IF EXISTS `liens_externes`;
-DROP TABLE IF EXISTS `commentaire`;
-DROP TABLE IF EXISTS `favoris`;
-DROP TABLE IF EXISTS `article`;
-DROP TABLE IF EXISTS `my_page`;
-DROP TABLE IF EXISTS `artisans`;
-DROP TABLE IF EXISTS `clients`;
-DROP TABLE IF EXISTS `evenement`;
-DROP TABLE IF EXISTS `adresse_créateur`;
-DROP TABLE IF EXISTS `utilisateurs`;
-DROP TABLE IF EXISTS `administrateur`;
-SET FOREIGN_KEY_CHECKS = 1;
+CREATE DATABASE IF NOT EXISTS `tresordemain` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `tresordemain`;
 
 -- --------------------------------------------------------
 
