@@ -1,0 +1,38 @@
+/* CSS : La mise en page */
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Le conteneur de la galerie */
+        .ma-galerie {
+            display: grid;
+            /* Crée des colonnes automatiques de minimum 250px */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px; /* Espace entre les images */
+            max-width: 1200px;
+            margin: 0 auto; /* Centre la galerie */
+        }
+
+        /* Le style des images */
+        .ma-galerie img {
+            width: 100%;
+            height: 250px; /* Force une hauteur identique pour l'harmonie */
+            object-fit: cover; /* Recadre l'image sans la déformer */
+            border-radius: 8px; /* Coins arrondis */
+            transition: transform 0.3s ease; /* Animation fluide */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            cursor: pointer;
+        }
+
+        /* Effet au survol de la souris */
+        .ma-galerie img:hover {
+            transform: scale(1.03); /* Léger zoom */
+            box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+        }
