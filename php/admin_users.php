@@ -83,8 +83,8 @@ $users = $stmt->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des Utilisateurs - Admin</title>
-    <link rel="stylesheet" href="/Projet-Tr-sor-de-Main/CSS/HeaderFooter.css">
-    <link rel="stylesheet" href="/Projet-Tr-sor-de-Main/CSS/projet.css">
+    <link rel="stylesheet" href="/CSS/HeaderFooter.css">
+    <link rel="stylesheet" href="/CSS/projet.css">
     <style>
         * { box-sizing: border-box; }
         .admin-wrapper { display: flex; min-height: 100vh; }
@@ -186,7 +186,7 @@ $users = $stmt->fetchAll();
                     </thead>
                     <tbody>
                         <?php foreach ($users as $user): 
-                            $userPhoto = !empty($user['photo_profil']) ? '/Projet-Tr-sor-de-Main/' . $user['photo_profil'] : '/Projet-Tr-sor-de-Main/assets/images/default-avatar.svg';
+                            $userPhoto = !empty($user['photo_profil']) ? '/' . $user['photo_profil'] : '/assets/images/default-avatar.svg';
                         ?>
                             <tr>
                                 <td><?php echo $user['id']; ?></td>

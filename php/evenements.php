@@ -27,9 +27,9 @@ catch (PDOException $e) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Événements - Trésor de Main</title>
-    <link rel="stylesheet" href="/Projet-Tr-sor-de-Main/CSS/HeaderFooter.css">
-    <link rel="stylesheet" href="/Projet-Tr-sor-de-Main/CSS/projet.css">
-    <link rel="stylesheet" href="/Projet-Tr-sor-de-Main/CSS/evenements.css">
+    <link rel="stylesheet" href="/CSS/HeaderFooter.css">
+    <link rel="stylesheet" href="/CSS/projet.css">
+    <link rel="stylesheet" href="/CSS/evenements.css">
     <style>
         .page-container {
             min-height: 100vh;
@@ -153,7 +153,7 @@ catch (PDOException $e) {
                     $image = !empty($event['image']) ? $event['image'] : 'https://via.placeholder.com/400x300/8D5524/FFFFFF?text=Evénement';
                 ?>
                 <div class="carte-event">
-                    <img src="/Projet-Tr-sor-de-Main/assets/images/<?php echo htmlspecialchars($image); ?>" class="carte-img"  alt="<?php echo htmlspecialchars($event['titre']); ?>">
+                    <img src="/assets/images/<?php echo htmlspecialchars($image); ?>" class="carte-img"  alt="<?php echo htmlspecialchars($event['titre']); ?>">
                     <div class="carte-contenu">
                         <h3><?php echo htmlspecialchars($event['titre']); ?></h3>
                         <div class="carte-lieu">                        

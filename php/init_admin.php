@@ -3,7 +3,7 @@
  * Script d'initialisation du compte administrateur
  * 
  * INSTRUCTIONS :
- * 1. Accédez à ce fichier via votre navigateur : http://localhost/Projet-Tr-sor-de-Main/php/init_admin.php
+ * 1. Accédez à ce fichier via votre navigateur : http://localhost/php/init_admin.php
  * 2. Une fois le compte créé, SUPPRIMEZ ce fichier pour des raisons de sécurité
  */
 

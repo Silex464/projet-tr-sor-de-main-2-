@@ -84,8 +84,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription - Trésor de Main</title>
-    <link rel="stylesheet" href="/Projet-Tr-sor-de-Main/CSS/HeaderFooter.css">
-    <link rel="stylesheet" href="/Projet-Tr-sor-de-Main/CSS/projet.css">
+    <link rel="stylesheet" href="/CSS/HeaderFooter.css">
+    <link rel="stylesheet" href="/CSS/projet.css">
     <style>
         .page-container { min-height: 100vh; display: flex; flex-direction: column; }
         main { flex: 1; padding: 40px 20px; display: flex; justify-content: center; align-items: center; }

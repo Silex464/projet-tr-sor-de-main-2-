@@ -9,10 +9,10 @@
  */
 
 // Configuration de la base de données
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'tresordemain');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_HOST', '178.33.122.21');
+define('DB_NAME', 'hangardb_yafa64220');
+define('DB_USER', 'hangardb_yafa64220');
+define('DB_PASS', 'XQisTXtNI4niZbhXTFDqEqIN');
 
 /**
  * Fonction de connexion sécurisée à la base de données

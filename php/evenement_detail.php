@@ -34,8 +34,8 @@ if ($result->num_rows > 0) {
 <head>
     <meta charset="UTF-8">
     <title><?php echo htmlspecialchars($event['lieu']); ?> - Trésor de Main</title>
-    <link rel="stylesheet" href="/Projet-Tr-sor-de-Main/CSS/projet.css">
-    <link rel="stylesheet" href="/Projet-Tr-sor-de-Main/CSS/HeaderFooter.css">
+    <link rel="stylesheet" href="/CSS/projet.css">
+    <link rel="stylesheet" href="/CSS/HeaderFooter.css">
     <style>
         .page-detail {
             max-width: 800px;
@@ -78,7 +78,7 @@ if ($result->num_rows > 0) {
     <main class="page-detail">
         
         <?php if (!empty($event['image'])): ?>
-            <img src="/Projet-Tr-sor-de-Main/assets/images/<?php echo htmlspecialchars($event['image']); ?>" class="detail-img" alt="Event">
+            <img src="/assets/images/<?php echo htmlspecialchars($event['image']); ?>" class="detail-img" alt="Event">
         <?php endif; ?>
 
         <h1><?php echo htmlspecialchars($event['titre']); ?></h1>

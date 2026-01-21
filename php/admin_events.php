@@ -131,8 +131,8 @@ $events = $stmt->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion des Événements - Admin</title>
-    <link rel="stylesheet" href="/Projet-Tr-sor-de-Main/CSS/HeaderFooter.css">
-    <link rel="stylesheet" href="/Projet-Tr-sor-de-Main/CSS/projet.css">
+    <link rel="stylesheet" href="/CSS/HeaderFooter.css">
+    <link rel="stylesheet" href="/CSS/projet.css">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }

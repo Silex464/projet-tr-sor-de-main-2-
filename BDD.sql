@@ -18,10 +18,11 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `tresordemain`
+-- Base de données : `hangardb_yafa64220`
 --
-CREATE DATABASE IF NOT EXISTS `tresordemain` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `tresordemain`;
+-- Note: Ne pas créer la base, elle existe déjà sur Hangar
+-- CREATE DATABASE IF NOT EXISTS `hangardb_yafa64220` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+-- USE `hangardb_yafa64220`;
 
 -- --------------------------------------------------------
 

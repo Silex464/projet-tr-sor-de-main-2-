@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contactez Trésor de Main">
-    <link rel="stylesheet" href="/Projet-Tr-sor-de-Main/CSS/HeaderFooter.css">
-    <link rel="stylesheet" href="/Projet-Tr-sor-de-Main/CSS/projet.css">
+    <link rel="stylesheet" href="/CSS/HeaderFooter.css">
+    <link rel="stylesheet" href="/CSS/projet.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
