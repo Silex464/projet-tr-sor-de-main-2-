@@ -3,6 +3,10 @@ FROM php:8.2-apache
 # Installer l'extension PDO MySQL
 RUN docker-php-ext-install pdo pdo_mysql
 
+# Désactiver les MPM en conflit et garder seulement prefork
+RUN a2dismod mpm_event mpm_worker 2>/dev/null || true \
+    && a2enmod mpm_prefork
+
 # Activer mod_rewrite
 RUN a2enmod rewrite
 
@@ -28,8 +32,8 @@ ENV DB_NAME=tresordemain
 ENV DB_USER=root
 ENV DB_PASS=
 
-# Exposer le port 80
+# Exposer le port (Railway utilise $PORT)
 EXPOSE 80
 
-# Port dynamique pour Railway/Render
-CMD sed -i "s/80/${PORT:-80}/g" /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf && apache2-foreground
+# Démarrer Apache avec le bon port
+CMD ["sh", "-c", "sed -i \"s/80/${PORT:-80}/g\" /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf && apache2-foreground"]
