@@ -20,11 +20,11 @@ if ($isLocalhost) {
     define('DB_USER', 'root');
     define('DB_PASS', '');
 } else {
-    // Environnement de production (Hangar Garage ISEP)
-    define('DB_HOST', '178.33.122.21');
-    define('DB_NAME', 'hangardb_yafa64220');
-    define('DB_USER', 'hangardb_yafa64220');
-    define('DB_PASS', 'XQisTXtNI4niZbhXTFDqEqlN');
+    // Environnement de production - utilise les variables d'environnement si disponibles
+    define('DB_HOST', getenv('DB_HOST') ?: '178.33.122.21');
+    define('DB_NAME', getenv('DB_NAME') ?: 'hangardb_yafa64220');
+    define('DB_USER', getenv('DB_USER') ?: 'hangardb_yafa64220');
+    define('DB_PASS', getenv('DB_PASS') ?: 'XQisTXtNI4niZbhXTFDqEqlN');
 }
 
 /**
