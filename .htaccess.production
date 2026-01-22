@@ -1,0 +1,19 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Détection automatique du chemin de base
+    # En production: RewriteBase /
+    # En local: RewriteBase /Projet-Tr-sor-de-Main/
+    RewriteBase /
+    
+    # Ne pas rediriger si c'est un fichier ou dossier existant
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-l
+    
+    # Rediriger les requêtes vers le dossier php/
+    RewriteRule ^(.*)\.php$ php/$1.php [L]
+    
+    # Rediriger aussi les index
+    RewriteRule ^$ php/Page_Acceuil.php [L]
+</IfModule>

@@ -1,0 +1,30 @@
+# Render Blueprint - Trésor de Main
+services:
+  - type: web
+    name: tresor-de-main
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: DB_HOST
+        fromService:
+          type: mysql
+          name: tresor-db
+          property: host
+      - key: DB_USER
+        fromService:
+          type: mysql
+          name: tresor-db
+          property: user
+      - key: DB_PASSWORD
+        fromService:
+          type: mysql
+          name: tresor-db
+          property: password
+      - key: DB_NAME
+        value: tresordemain
+
+databases:
+  - name: tresor-db
+    databaseName: tresordemain
+    plan: free
